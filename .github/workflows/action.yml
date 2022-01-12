@@ -10,10 +10,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
+     - name: Isocalendar plugin (half year)
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@master
+        with:
+          filename: metrics.plugin.isocalendar.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+          plugins_errors_fatal: ${{ github.repository == 'knebekajze/knebekzje' }}
+          output_action: pull-request
+          delay: 120
+          
    # See action.yml for all options
       - uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
           token: ${{ secrets.METRICS_TOKEN }}
+          
+    
           
  
