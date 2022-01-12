@@ -10,7 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-    name: "📅 Isometric commit calendar"
+   # See action.yml for all options
+      - uses: lowlighter/metrics@latest
+        with:
+          # Your GitHub token
+          token: ${{ secrets.METRICS_TOKEN }}
+          
+          name: "📅 Isometric commit calendar"
 category: github
 index: 0
 supports:
@@ -33,11 +39,5 @@ inputs:
     values:
       - half-year
       - full-year
-    
-   # See action.yml for all options
-      - uses: lowlighter/metrics@latest
-        with:
-          # Your GitHub token
-          token: ${{ secrets.METRICS_TOKEN }}
           
       
