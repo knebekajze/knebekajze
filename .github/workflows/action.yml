@@ -28,3 +28,5 @@ jobs:
           config_timezone: Europe/Kiev
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
+          plugin_stars: yes
+          plugin_stars_limit: 4
